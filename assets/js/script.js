@@ -1,21 +1,22 @@
-var startScreen = document.querySelector('.start');
-var quizScreen = document.querySelector('.quiz');
-var endScreen = document.querySelector('.end');
-var scoresScreen = document.querySelector('.highscores');
-
-var startButton = document.querySelector('#start-button');
-var questionsArea = document.querySelector('.question-area');
-var feedbackText = document.querySelector("#feedback-text");
+// Querying a lot of HTML elements. Elements are sorted by order of appearance.
 var viewHighscores = document.querySelector('#view-scores');
 var scoreDisplay = document.querySelector('#score');
+var feedbackText = document.querySelector("#feedback-text");
+
+var startScreen = document.querySelector('.start');
+var startButton = document.querySelector('#start-button');
+
+var quizScreen = document.querySelector('.quiz');
+var questionsArea = document.querySelector('.question-area');
+
+var endScreen = document.querySelector('.end');
 var initialsField = document.querySelector('#initials-field');
 var submitButton = document.querySelector('#submit-button');
-var highscoresList = document.querySelector('#highscore-list');
 
+var scoresScreen = document.querySelector('.highscores');
+var highscoresList = document.querySelector('#highscore-list');
 var clearScoresButton = document.querySelector('#clear-scores-button');
 var playAgainButton = document.querySelector('#play-again-button');
-
-var highscores = [];
 
 var questions = [
     {
@@ -47,6 +48,7 @@ var questions = [
 var index = 0;
 
 var score = 100;
+var highscores = [];
 var timer;
 
 function show(screen) {
