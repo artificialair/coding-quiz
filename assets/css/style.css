@@ -1,0 +1,9 @@
+#view-scores {
+    text-decoration: underline;
+    position: relative;
+    float: left;
+}
+#score {
+    position: relative;
+    float: right;
+}

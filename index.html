@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <div class="header">
+        <p id="view-scores">View Highscores</p>
+        <p id="score"></p>
+    </div>
+    <main>
+        <section class="start">
+            <header>
+                <h2>Coding Quiz Challenge</h2>
+            </header>
+            <p>Try to answer the following code-related question withint the time limit. Keep in mind that incorrect answers will remove time.</p>
+            <button id="start-button">Start</button>
+        </section>
+        <section class="quiz">
+            <header>
+                <h2>Quiz</h2>
+            </header>
+            <div class="question-area"></div>
+        </section>
+        <section class="end">
+            <header>
+                <h2>All Done!</h2>
+            </header>
+            <form>
+                <label for="initials-field">Enter your initials</label>
+                <input id="initials-field" name="comments"></input>
+                <button id="submit-button">Submit</button>
+            </form>
+        </section>
+        <section class="highscores">
+            <header>
+                <h2>High Scores</h2>
+                <ul id="todo-list"></ul>
+            </header>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
