@@ -87,7 +87,7 @@ function displayQuestion() {
     for (var i = 0; i < answers.length; i++) {
         var answerElement = document.createElement('button');
         answerElement.textContent = answers[i];
-        answerElement.setAttribute("style", "padding-right: 25px; text-align: left; display: block;");
+        answerElement.setAttribute("style", "display: block;");
         questionsArea.appendChild(answerElement);
     }
 }
