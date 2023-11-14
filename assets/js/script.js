@@ -5,6 +5,7 @@ var scoresScreen = document.querySelector('.highscores');
 
 var startButton = document.querySelector('#start-button');
 var questionsArea = document.querySelector('.question-area');
+var feedbackText = document.querySelector("#feedback-text");
 var viewHighscores = document.querySelector('#view-scores');
 var scoreDisplay = document.querySelector('#score');
 var initialsField = document.querySelector('#initials-field');
@@ -57,6 +58,7 @@ function startQuiz() {
     // Resetting some important variables
     index = 0;
     score = 100;
+    scoreDisplay.textContent = "Score: " + score;
 
     // Shows the quiz section, displays the first question, and starts the timer.
     show('quiz');
@@ -96,8 +98,9 @@ function renderHighscores() {
     // Clear highscoresList element
     highscoresList.innerHTML = "";
   
-    // Render a new li for each highscore, including initials and score
+    // sort the list by score in descending order
     highscores = highscores.sort(function(a, b){return b.score - a.score})
+    // Render a new li for each highscore, including initials and score
     for (var i = 0; i < highscores.length; i++) {
       var highscore = highscores[i];
   
@@ -127,6 +130,11 @@ quizScreen.addEventListener('click', function(event) {
         if (event.target.textContent != questions[index]["answers"][questions[index]['correctAnswer']]) // this is messy but... it works
         {
             decrementScore(15);
+            feedbackText.textContent = "WRONG";
+            setTimeout(() => {feedbackText.textContent = ""}, 2000);
+        } else {
+            feedbackText.textContent = "CORRECT";
+            setTimeout(() => {feedbackText.textContent = ""}, 2000);
         }
 
         // If there's still questions in the list, we display the next one.
