@@ -19,24 +19,29 @@ var highscores = [];
 
 var questions = [
     {
-        "question": "test question 1",
-        "answers": ["a", "b", "c", "d"],
-        "correctAnswer": 1
-    },
-    {
-        "question": "test question 2",
-        "answers": ["a", "a", "c", "d"],
+        "question": "What is JavaScript primarily used for?",
+        "answers": ["Styling web pages", "Enhancing the layout of web pages", "Adding interactivity to web pages", "Structuring the content of web pages"],
         "correctAnswer": 2
     },
     {
-        "question": "test question 3",
-        "answers": ["a", "4", "c", "d"],
-        "correctAnswer": 3
+        "question": "How do you include an external JavaScript file in an HTML document?",
+        "answers": ['<script src="script.js"></script>', '<javascript src="script.js"></javascript>', '<link rel="js" href="script.js">', '<include script="script.js">'],
+        "correctAnswer": 0
     },
     {
-        "question": "test question 4",
-        "answers": ["a", "b", "c", "d"],
-        "correctAnswer": 0
+        "question": "Which of the following is not a commonly used data type in JavaScript?",
+        "answers": ["number", "float", "integer", "string"],
+        "correctAnswer": 2
+    },
+    {
+        "question": "How many possible values can be stored in the boolean data type?",
+        "answers": ["1", "2", "3", "4"],
+        "correctAnswer": 1
+    },
+    {
+        "question": "What is the purpose of the 'alert()' function in JavaScript",
+        "answers": ["Display an input box", "Print an error to the console", "Execute a loop", "Display a message box with a specified message"],
+        "correctAnswer": 3
     }
 ];
 var index = 0;
@@ -80,6 +85,7 @@ function displayQuestion() {
     for (var i = 0; i < answers.length; i++) {
         var answerElement = document.createElement('button');
         answerElement.textContent = answers[i];
+        answerElement.setAttribute("style", "padding-right: 25px; text-align: left; display: block;");
         questionsArea.appendChild(answerElement);
     }
 }
@@ -131,10 +137,10 @@ quizScreen.addEventListener('click', function(event) {
         {
             decrementScore(15);
             feedbackText.textContent = "WRONG";
-            setTimeout(() => {feedbackText.textContent = ""}, 2000);
+            setTimeout(() => {feedbackText.textContent = ""}, 1000);
         } else {
             feedbackText.textContent = "CORRECT";
-            setTimeout(() => {feedbackText.textContent = ""}, 2000);
+            setTimeout(() => {feedbackText.textContent = ""}, 1000);
         }
 
         // If there's still questions in the list, we display the next one.
